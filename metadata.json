@@ -1,0 +1,6 @@
+{
+  "name": "M4DiTV",
+  "description": "An advanced, Material You IPTV Player with Multi-Profile, offline validation, and EPG support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
