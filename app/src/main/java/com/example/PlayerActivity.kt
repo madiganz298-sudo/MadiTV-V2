@@ -20,11 +20,19 @@ class PlayerActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val channel = intent.getSerializableExtra("channel_key") as? Channel
-        if (channel == null) {
+        val channelUrl = intent.getStringExtra("channel_url")
+        if (channelUrl.isNullOrEmpty()) {
             finish()
             return
         }
+        
+        val channel = Channel(
+            id = intent.getIntExtra("channel_id", 0),
+            playlistId = 0,
+            title = intent.getStringExtra("channel_title") ?: "Live TV",
+            url = channelUrl,
+            category = intent.getStringExtra("channel_category")
+        )
 
         setContent {
             MyApplicationTheme {

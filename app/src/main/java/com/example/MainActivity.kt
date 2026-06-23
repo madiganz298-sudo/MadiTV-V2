@@ -134,7 +134,10 @@ class MainActivity : ComponentActivity() {
                                     viewModel = viewModel,
                                     onPlayChannel = { selectedChannel, _ ->
                                         val intent = Intent(context, PlayerActivity::class.java).apply {
-                                            putExtra("channel_key", selectedChannel)
+                                            putExtra("channel_id", selectedChannel.id)
+                                            putExtra("channel_title", selectedChannel.title)
+                                            putExtra("channel_url", selectedChannel.url)
+                                            putExtra("channel_category", selectedChannel.category)
                                         }
                                         context.startActivity(intent)
                                     }
